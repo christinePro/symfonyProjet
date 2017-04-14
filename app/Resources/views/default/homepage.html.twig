@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block menu %}{% endblock menu %}
+
+{% block title %}Welcome on homepage!{% endblock %}
+
+{% block body %}
+<h1>Homepage</h1>
+{{ include ('_menu.html.twig', {'color': 'orange'}) }}
+<p>Welcome here!</p>
+{% endblock body %}
