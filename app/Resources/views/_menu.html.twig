@@ -1,9 +1,9 @@
 <ul class="nav nav-pills" style="background:{{ color|default('pink') }};padding:1em;">
     <li role="presentation"{{ app.request.get('_route') == 'homepage' ? ' class="active"' }}>
-        <a href="{{ path('homepage') }}">Home</a>
+        <a href="{{ path('homepage') }}">BLOG</a>
     </li>
     <li role="presentation"{{ app.request.get('_route') == 'contact' ? ' class="active"' }}>
-        <a href="{{ path('contact') }}">Contact</a>
+        <a href="{{ path('contact') }}">NEW PAGE</a>
     </li>
     <li role="presentation"{{ app.request.get('_route') == 'hello_world' ? ' class="active"' }}>
         <a href="{{ path('hello_world', {'name': 'estiam'}) }}">Hello Estiam</a>

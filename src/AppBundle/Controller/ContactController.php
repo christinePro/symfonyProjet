@@ -30,7 +30,7 @@ class ContactController extends Controller
             $em->flush();// execute queries in database
 
             $message = new \Swift_Message();
-            $message->setTo(['jeremy.romey@sensiolabs.com' => 'Account Manager']);
+            $message->setTo(['nadegekabore.com' => 'Account Manager']);
             $message->setFrom('site@example.org');
             $message->setSubject('Contact from '. $contact->getName());
             $message->setBody("
