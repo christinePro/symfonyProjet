@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 use AppBundle\Entity\Contact;
 use AppBundle\Form\Type\ContactType;
 
-class NewPageController extends Controller
+class ContactController extends Controller
 {
     /**
      * @Route("/contact", name="contact")

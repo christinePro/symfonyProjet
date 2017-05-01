@@ -6,9 +6,9 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Contact
+ * NewPage
  *
- * @ORM\Table(name="contact")
+ * @ORM\Table(name="Contact)
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ContactRepository")
  */
 class Contact
@@ -36,9 +36,8 @@ class Contact
      * @var string
      *
      * @Assert\NotBlank()
-     * @Assert\Email(message="Email {{ value }} non valide.")
      *
-     * @ORM\Column(name="email", type="string", length=255)
+     * @ORM\Column(name="content", type="string", length=255)
      */
     private $content;
 
@@ -46,7 +45,9 @@ class Contact
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="sent_at", type="datetime")
+     * @Assert\NotBlank()
+     *
+     * @ORM\Column(name="publishAt", type="datetime")
      */
     private $publishAt;
 
@@ -112,14 +113,14 @@ class Contact
      */
     public function getContent()
     {
-        return $this->Content;
+        return $this->content;
     }
 
 
     /**
-     * Set pulishAt
+     * Set publishAt
      *
-     * @param \DateTime $sentAt
+     * @param \DateTime $publishAt
      *
      * @return Contact
      */

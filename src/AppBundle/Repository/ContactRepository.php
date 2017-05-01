@@ -16,7 +16,7 @@ class ContactRepository extends \Doctrine\ORM\EntityRepository
 
         $qb
             ->select('c')
-            ->addOrderBy('c.sentAt', 'DESC')
+            ->addOrderBy('c.publishAt', 'DESC')
         ;
 
         return $qb->getQuery()->getResult();
