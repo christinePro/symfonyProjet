@@ -13,84 +13,53 @@ class Contact
      * @Assert\NotBlank()
      * @Assert\Length(max=100)
      */
-    private $name;
-
-    /**
-     * @Assert\NotBlank()
-     * @Assert\Email(message="Email {{ value }} non valide.")
-     */
-    private $email;
-
-    /**
-     * @Assert\NotBlank()
-     */
-    private $subject;
+    private $title;
 
     /**
      * @Assert\NotBlank()
      * @Assert\Length(min=10, max=2000)
      */
-    private $message;
+    private $content;
 
-    private $sentAt;
+    /**
+     * @Assert\NotBlank()
+     * @Assert\Length(min=10, max=2000)
+     */
+     private $publishAt;
 
-    public function setName($name)
+
+     public function setTitle($title)
     {
-        $this->name = $name;
+        $this->title = $title;
+
+        return $this;
+    }
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    public function setContent($content)
+    {
+        $this->content = $content;
 
         return $this;
     }
 
-    public function getName()
+    public function getContent()
     {
-        return $this->name;
+        return $this->content;
     }
 
-    public function setEmail($email)
+    public function setPublishAt(\DateTime $publishAt)
     {
-        $this->email = $email;
+        $this->publishAt = $publishAt;
 
         return $this;
     }
 
-    public function getEmail()
+    public function getPublishAt()
     {
-        return $this->email;
-    }
-
-    public function setSubject($subject)
-    {
-        $this->subject = $subject;
-
-        return $this;
-    }
-
-    public function getSubject()
-    {
-        return $this->subject;
-    }
-
-    public function setMessage($message)
-    {
-        $this->message = $message;
-
-        return $this;
-    }
-
-    public function getMessage()
-    {
-        return $this->message;
-    }
-
-    public function setSentAt(\DateTime $sentAt)
-    {
-        $this->sentAt = $sentAt;
-
-        return $this;
-    }
-
-    public function getSentAt()
-    {
-        return $this->sentAt;
+        return $this->publishAt;
     }
 }

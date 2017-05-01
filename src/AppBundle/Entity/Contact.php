@@ -28,9 +28,9 @@ class Contact
      * @Assert\NotBlank()
      * @Assert\Length(max=100)
      *
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\Column(name="title", type="string", length=255)
      */
-    private $name;
+    private $title;
 
     /**
      * @var string
@@ -40,33 +40,15 @@ class Contact
      *
      * @ORM\Column(name="email", type="string", length=255)
      */
-    private $email;
+    private $content;
 
-    /**
-     * @var string
-     *
-     * @Assert\NotBlank()
-     *
-     * @ORM\Column(name="subject", type="string", length=255)
-     */
-    private $subject;
-
-    /**
-     * @var string
-     *
-     * @Assert\NotBlank()
-     * @Assert\Length(min=10, max=2000)
-     *
-     * @ORM\Column(name="message", type="text")
-     */
-    private $message;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="sent_at", type="datetime")
      */
-    private $sentAt;
+    private $publishAt;
 
     /**
      * @var bool
@@ -86,123 +68,76 @@ class Contact
     }
 
     /**
-     * Set name
+     * Set title
      *
-     * @param string $name
+     * @param string $title
      *
      * @return Contact
      */
-    public function setName($name)
+    public function setTitle($title)
     {
-        $this->name = $name;
+        $this->title= $title;
 
         return $this;
     }
 
     /**
-     * Get name
+     * Get title
      *
      * @return string
      */
-    public function getName()
+    public function getTitle()
     {
-        return $this->name;
+        return $this->title;
     }
 
     /**
-     * Set email
+     * Set content
      *
-     * @param string $email
+     * @param string $content
      *
      * @return Contact
      */
-    public function setEmail($email)
+    public function setContent($content)
     {
-        $this->email = $email;
+        $this->content = $content;
 
         return $this;
     }
 
     /**
-     * Get email
+     * Get content
      *
      * @return string
      */
-    public function getEmail()
+    public function getContent()
     {
-        return $this->email;
+        return $this->Content;
     }
 
-    /**
-     * Set subject
-     *
-     * @param string $subject
-     *
-     * @return Contact
-     */
-    public function setSubject($subject)
-    {
-        $this->subject = $subject;
-
-        return $this;
-    }
 
     /**
-     * Get subject
-     *
-     * @return string
-     */
-    public function getSubject()
-    {
-        return $this->subject;
-    }
-
-    /**
-     * Set message
-     *
-     * @param string $message
-     *
-     * @return Contact
-     */
-    public function setMessage($message)
-    {
-        $this->message = $message;
-
-        return $this;
-    }
-
-    /**
-     * Get message
-     *
-     * @return string
-     */
-    public function getMessage()
-    {
-        return $this->message;
-    }
-
-    /**
-     * Set sentAt
+     * Set pulishAt
      *
      * @param \DateTime $sentAt
      *
      * @return Contact
      */
-    public function setSentAt($sentAt)
+    public function setPublishAt($publishAt)
     {
-        $this->sentAt = $sentAt;
+        $this->publishAt = $publishAt;
 
         return $this;
     }
 
     /**
-     * Get sentAt
+     * Get publishAt
      *
      * @return \DateTime
      */
-    public function getSentAt()
+    public function getPublishAt()
     {
-        return $this->sentAt;
+        return $this->publishAt;
     }
 
     public function setIsProcessed($isProcessed)
