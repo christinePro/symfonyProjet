@@ -2,15 +2,15 @@
     <li role="presentation"{{ app.request.get('_route') == 'homepage' ? ' class="active"' }}>
         <a href="{{ path('homepage') }}">BLOG</a>
     </li>
-    <li role="presentation"{{ app.request.get('_route') == 'contact' ? ' class="active"' }}>
-        <a href="{{ path('contact') }}">NEW PAGE</a>
+    <li role="presentation"{{ app.request.get('_route') == 'blogPost' ? ' class="active"' }}>
+        <a href="{{ path('blogPost') }}">NEW PAGE</a>
     </li>
     <li role="presentation"{{ app.request.get('_route') == 'hello_world' ? ' class="active"' }}>
         <a href="{{ path('hello_world', {'name': 'estiam'}) }}">Hello Estiam</a>
     </li>
     {% if is_granted('ROLE_ADMIN') %}
-        <li role="presentation"{{ app.request.get('_route') == 'contact_list' ? ' class="active"' }}>
-            <a href="{{ path('contact_list') }}">Contacts</a>
+        <li role="presentation"{{ app.request.get('_route') == 'blogPost_list' ? ' class="active"' }}>
+            <a href="{{ path('blogPost_list') }}">BlogPosts</a>
         </li>
     {% endif %}
     {% if app.user %}

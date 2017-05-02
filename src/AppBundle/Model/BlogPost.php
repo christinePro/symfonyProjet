@@ -4,10 +4,7 @@ namespace AppBundle\Model;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
-/**
- * No needed anymore, replaced by AppBundle\Entity\Contact
- */
-class Contact
+class BlogPost
 {
     /**
      * @Assert\NotBlank()
@@ -26,7 +23,6 @@ class Contact
      * @Assert\Length(min=10, max=2000)
      */
      private $publishAt;
-
 
      public function setTitle($title)
     {

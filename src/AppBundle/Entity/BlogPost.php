@@ -3,15 +3,14 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * NewPage
+ * BlogPost
  *
- * @ORM\Table(name="Contact)
- * @ORM\Entity(repositoryClass="AppBundle\Repository\ContactRepository")
+ * @ORM\Table(name="blog_post")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\BlogPostRepository")
  */
-class Contact
+class BlogPost
 {
     /**
      * @var int
@@ -25,9 +24,6 @@ class Contact
     /**
      * @var string
      *
-     * @Assert\NotBlank()
-     * @Assert\Length(max=100)
-     *
      * @ORM\Column(name="title", type="string", length=255)
      */
     private $title;
@@ -35,28 +31,17 @@ class Contact
     /**
      * @var string
      *
-     * @Assert\NotBlank()
-     *
      * @ORM\Column(name="content", type="string", length=255)
      */
     private $content;
 
-
     /**
      * @var \DateTime
      *
-     * @Assert\NotBlank()
-     *
-     * @ORM\Column(name="publishAt", type="datetime")
+     * @ORM\Column(name="pubishAt", type="datetime")
      */
-    private $publishAt;
+    private $pubishAt;
 
-    /**
-     * @var bool
-     *
-     * @ORM\Column(name="is_processed", type="boolean")
-     */
-    private $isProcessed;
 
     /**
      * Get id
@@ -73,11 +58,11 @@ class Contact
      *
      * @param string $title
      *
-     * @return Contact
+     * @return BlogPost
      */
     public function setTitle($title)
     {
-        $this->title= $title;
+        $this->title = $title;
 
         return $this;
     }
@@ -97,7 +82,7 @@ class Contact
      *
      * @param string $content
      *
-     * @return Contact
+     * @return BlogPost
      */
     public function setContent($content)
     {
@@ -116,40 +101,28 @@ class Contact
         return $this->content;
     }
 
-
     /**
-     * Set publishAt
+     * Set pubishAt
      *
-     * @param \DateTime $publishAt
+     * @param \DateTime $pubishAt
      *
-     * @return Contact
+     * @return BlogPost
      */
-    public function setPublishAt($publishAt)
+    public function setPubishAt($pubishAt)
     {
-        $this->publishAt = $publishAt;
+        $this->pubishAt = $pubishAt;
 
         return $this;
     }
 
     /**
-     * Get publishAt
+     * Get pubishAt
      *
      * @return \DateTime
      */
-    public function getPublishAt()
+    public function getPubishAt()
     {
-        return $this->publishAt;
-    }
-
-    public function setIsProcessed($isProcessed)
-    {
-        $this->isProcessed = $isProcessed;
-
-        return $this;
-    }
-
-    public function isProcessed()
-    {
-        return (bool) $this->isProcessed;
+        return $this->pubishAt;
     }
 }
+
